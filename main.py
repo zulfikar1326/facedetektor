@@ -1,5 +1,5 @@
 import cv2 as cv
-import numpy
+import imutils
 
 
 kamera = cv.VideoCapture(0)
@@ -21,12 +21,12 @@ while True:
     try :
         addcolor = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
                 
-        filefaceDetect = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_frontalface_alt.xml") 
-        faceDetector =  filefaceDetect.detectMultiScale(addcolor, scaleFactor=1.1, minNeighbors=1, minSize=((20,20)))
+        # filefaceDetect = cv.CascadeClassifier(cv.data.haarcascades + "haarcascade_frontalface_alt.xml") 
+        # faceDetector =  filefaceDetect.detectMultiScale(addcolor, scaleFactor=1.1, minNeighbors=1, minSize=((20,20)))
         
      
-        for (x, y, w, h) in faceDetector:
-            cv.rectangle(addcolor, (x, y), (x + w, y + h), (255, 255, 0), 2)
+        # for (x, y, w, h) in faceDetector:
+        #     cv.rectangle(addcolor, (x, y), (x + w, y + h), (255, 255, 0), 2)
             
     except:
         print('Tidak file seperti itu')
